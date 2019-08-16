@@ -17,19 +17,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				bat 'dotnet restore ${SOLUTION_FILE} --source https://api.nuget.org/v3/index.json'
-                bat 'dotnet build  ${SOLUTION_FILE} -p:Configuration=release -v:n'
+				bat 'dotnet restore WebApplication2.sln --source https://api.nuget.org/v3/index.json'
+                bat 'dotnet build  WebApplication2.sln -p:Configuration=release -v:n'
             }
         }
         stage('Test') {
             steps {
-                bat 'dotnet test ${TEST_FILE}'
+                bat 'dotnet test XUnitTestProject1/ValuesControllerFixture.cs'
             }
         }
 	    
 	      stage('Deploy') {
             steps {
-				bat 'dotnet publish ${SOLUTION_FILE_PATH} -o Publish'
+				bat 'dotnet publish WebApplication2.sln -o Publish'
             }
         }
     }
