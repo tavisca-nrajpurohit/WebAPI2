@@ -31,7 +31,6 @@ C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\bin\Debug\netcoreapp2.2
 C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\bin\Debug\netcoreapp2.2\WebApi.runtimeconfig.dev.json
 C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\bin\Debug\netcoreapp2.2\WebApi.dll
 C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\bin\Debug\netcoreapp2.2\WebApi.pdb
-C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\obj\Debug\netcoreapp2.2\WebApi.csprojResolveAssemblyReference.cache
 C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\obj\Debug\netcoreapp2.2\WebApi.csproj.CoreCompileInputs.cache
 C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\obj\Debug\netcoreapp2.2\WebApi.RazorAssemblyInfo.cache
 C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\obj\Debug\netcoreapp2.2\WebApi.RazorAssemblyInfo.cs
@@ -40,3 +39,4 @@ C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\obj\Debug\netcoreapp2.2
 C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\obj\Debug\netcoreapp2.2\WebApi.RazorTargetAssemblyInfo.cache
 C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\obj\Debug\netcoreapp2.2\WebApi.dll
 C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\obj\Debug\netcoreapp2.2\WebApi.pdb
+C:\Users\nrajpurohit\source\repos\WebApi\WebApplication2\obj\Debug\netcoreapp2.2\WebApi.csprojAssemblyReference.cache

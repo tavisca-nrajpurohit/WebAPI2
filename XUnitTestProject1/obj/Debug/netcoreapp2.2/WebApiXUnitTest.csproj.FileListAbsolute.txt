@@ -42,9 +42,10 @@ C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Debug\netcoreapp2
 C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Debug\netcoreapp2.2\WebApiXUnitTest.pdb
 C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Debug\netcoreapp2.2\WebApi.dll
 C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Debug\netcoreapp2.2\WebApi.pdb
-C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Debug\netcoreapp2.2\WebApiXUnitTest.csprojResolveAssemblyReference.cache
 C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Debug\netcoreapp2.2\WebApiXUnitTest.csproj.CoreCompileInputs.cache
 C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Debug\netcoreapp2.2\WebApiXUnitTest.AssemblyInfoInputs.cache
 C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Debug\netcoreapp2.2\WebApiXUnitTest.AssemblyInfo.cs
 C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Debug\netcoreapp2.2\WebApiXUnitTest.dll
 C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Debug\netcoreapp2.2\WebApiXUnitTest.pdb
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Debug\netcoreapp2.2\WebApiXUnitTest.csprojAssemblyReference.cache
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Debug\netcoreapp2.2\WebApiXUnitTest.csproj.CopyComplete
