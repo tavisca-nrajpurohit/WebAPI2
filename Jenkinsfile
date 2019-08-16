@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'dotnet test XUnitTestProject1/ValuesControllerFixture.cs'
+                bat 'dotnet test XUnitTestProject1/WebApiXUnitTest.csproj'
             }
         }
 	    
