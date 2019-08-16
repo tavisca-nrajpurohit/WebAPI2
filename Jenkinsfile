@@ -50,8 +50,8 @@ pipeline
             steps 
             {
                 echo '_________________________ DEPLOY ________________________________'
-                bat 'docker build -t WebApiImage -f Dockerfile .'
-                bat 'docker run WebApiImage -p 6069:5000'
+                bat 'docker build -t webapi -f Dockerfile .'
+                bat 'docker run webapi -p 6069:5000'
             }
         }
     }
