@@ -1,0 +1,17 @@
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Release\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Release\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Release\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Release\netcoreapp2.2\WebApiXUnitTest.deps.json
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Release\netcoreapp2.2\WebApiXUnitTest.runtimeconfig.json
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Release\netcoreapp2.2\WebApiXUnitTest.runtimeconfig.dev.json
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Release\netcoreapp2.2\WebApiXUnitTest.dll
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Release\netcoreapp2.2\WebApiXUnitTest.pdb
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Release\netcoreapp2.2\WebApi.dll
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\bin\Release\netcoreapp2.2\WebApi.pdb
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Release\netcoreapp2.2\WebApiXUnitTest.csprojAssemblyReference.cache
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Release\netcoreapp2.2\WebApiXUnitTest.csproj.CoreCompileInputs.cache
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Release\netcoreapp2.2\WebApiXUnitTest.AssemblyInfoInputs.cache
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Release\netcoreapp2.2\WebApiXUnitTest.AssemblyInfo.cs
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Release\netcoreapp2.2\WebApiXUnitTest.csproj.CopyComplete
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Release\netcoreapp2.2\WebApiXUnitTest.dll
+C:\Users\nrajpurohit\source\repos\WebApi\XUnitTestProject1\obj\Release\netcoreapp2.2\WebApiXUnitTest.pdb

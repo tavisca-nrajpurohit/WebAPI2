@@ -8,7 +8,7 @@ pipeline
 					description: '')
 
 			string(	name: 'TEST_FILE',
-					defaultValue: "XUnitTestProject1/ValuesControllerFixture.cs", 
+					defaultValue: "XUnitTestProject1/WebApiXUnitTest.csproj", 
 					description: '')
     }
 	
@@ -18,20 +18,40 @@ pipeline
         {
             steps 
             {
-				bat 'dotnet restore WebApplication2.sln --source https://api.nuget.org/v3/index.json'            }
+                bat '_________________________ RESTORE ________________________________'
+				bat 'dotnet restore %SOLUTION_FILE% --source https://api.nuget.org/v3/index.json'            }
         }
         stage('Build') 
         {
             steps 
             {
-                bat 'dotnet build  WebApplication2.sln -p:Configuration=release -v:n'
+                bat '_________________________ BUILD ________________________________'
+                bat 'dotnet build %SOLUTION_FILE% -p:Configuration=release -v:n'
             }
         }
         stage('Test') 
         {
             steps 
             {
-                bat 'dotnet test XUnitTestProject1/WebApiXUnitTest.csproj'
+                bat '_________________________ TEST ________________________________'
+                bat 'dotnet test %TEST_FILE%'
+            }
+        }
+        stage('Publish')
+        {
+            steps 
+            {
+                bat '_________________________ PUBLISH ________________________________'
+                bat 'dotnet publish %SOLUTION_FILE% -c RELEASE -o Publish'
+            }
+        }
+        stage('Deploy')
+        {
+            steps 
+            {
+                bat '_________________________ DEPLOY ________________________________'
+                bat 'docker build -t WebApiImage -f Dockerfile .'
+                bat 'docker run WebApiImage -p 6069:5000'
             }
         }
     }
