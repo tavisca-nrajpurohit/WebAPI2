@@ -18,14 +18,14 @@ pipeline
         {
             steps 
             {
-                bat '_________________________ RESTORE ________________________________'
+                echo '_________________________ RESTORE ________________________________'
 				bat 'dotnet restore %SOLUTION_FILE% --source https://api.nuget.org/v3/index.json'            }
         }
         stage('Build') 
         {
             steps 
             {
-                bat '_________________________ BUILD ________________________________'
+                echo '_________________________ BUILD ________________________________'
                 bat 'dotnet build %SOLUTION_FILE% -p:Configuration=release -v:n'
             }
         }
@@ -33,7 +33,7 @@ pipeline
         {
             steps 
             {
-                bat '_________________________ TEST ________________________________'
+                echo '_________________________ TEST ________________________________'
                 bat 'dotnet test %TEST_FILE%'
             }
         }
@@ -41,7 +41,7 @@ pipeline
         {
             steps 
             {
-                bat '_________________________ PUBLISH ________________________________'
+                echo '_________________________ PUBLISH ________________________________'
                 bat 'dotnet publish %SOLUTION_FILE% -c RELEASE -o Publish'
             }
         }
@@ -49,7 +49,7 @@ pipeline
         {
             steps 
             {
-                bat '_________________________ DEPLOY ________________________________'
+                echo '_________________________ DEPLOY ________________________________'
                 bat 'docker build -t WebApiImage -f Dockerfile .'
                 bat 'docker run WebApiImage -p 6069:5000'
             }
