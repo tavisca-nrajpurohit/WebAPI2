@@ -92,8 +92,6 @@ pipeline
             }
         }
 
-
-        }
         stage('REMOVE OLD IMAGE')
         {
             steps 
