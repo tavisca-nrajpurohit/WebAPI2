@@ -5,11 +5,31 @@ pipeline
 	{
 			string(	name: 'SOLUTION_FILE',
 					defaultValue: "WebApplication2.sln", 
-					description: '')
+					description: 'Project Solution File')
 
 			string(	name: 'TEST_FILE',
 					defaultValue: "XUnitTestProject1/WebApiXUnitTest.csproj", 
-					description: '')
+					description: 'Project Unit Test File')
+
+            string( name: 'DOCKER_USERNAME',
+                    defaultValue: "rneelesh299", 
+                    description: 'Docker Account Username')
+
+            string( name: 'DOCKER_PASSWORD',
+                    defaultValue: "Admin@123", 
+                    description: 'Docker Account Password')
+
+            string( name: 'DOCKER_IMAGE',
+                    defaultValue: "WebAPI_image", 
+                    description: 'Docker Image Name')
+
+            string( name: 'DOCKER_REPOSITORY',
+                    defaultValue: "rneelesh299/training_repo", 
+                    description: 'Docker Account Repository')
+
+            string( name: 'DOCKER_TAG',
+                    defaultValue: "tagname", 
+                    description: 'Docker Image Tag')
     }
 	
     stages 
@@ -37,22 +57,42 @@ pipeline
                 bat 'dotnet test %TEST_FILE%'
             }
         }
-        stage('Publish')
+        stage('Build Artifact')
         {
             steps 
             {
                 echo '_________________________ PUBLISH ________________________________'
                 bat 'dotnet publish %SOLUTION_FILE% -c RELEASE -o Publish'
             }
+            steps 
+            {
+                echo '_________________________ BUILD DOCKER IMAGE ________________________________'
+                bat 'docker build -t %DOCKER_IMAGE% -f Dockerfile .'               }
+            steps 
+            {
+                echo '_________________________ DOCKER USER LOGIN ________________________________'
+                bat 'docker login -p %DOCKER_PASSWORD% -u %DOCKER_USERNAME%'
+            }
+            steps 
+            {
+                echo '__________________ DOCKER PUSH IMAGE TO DOCKERHUB ________________________'
+                bat 'docker tag %DOCKER_IMAGE% %DOCKER_REPOSITORY%:%DOCKER_TAG%'
+                bat 'docker push %DOCKER_REPOSITORY%:%DOCKER_TAG%'
+            }
         }
         stage('Deploy')
         {
             steps 
             {
-                echo '_________________________ DEPLOY ________________________________'
-                bat 'docker build -t webapi -f Dockerfile .'
-                bat 'docker run -p 6069:5000 webapi'
+                echo '_________________________ REMOVE OLD IMAGE ________________________________'
+                bat 'docker rmi %DOCKER_IMAGE%:latest'
+                bat 'docker rmi %DOCKER_REPOSITORY%:%DOCKER_TAG%'
             }
+            steps 
+            {
+                echo '_________________________ DOCKER IMAGE RUN ________________________________'
+                bat 'docker pull %DOCKER_REPOSITORY%:%DOCKER_TAG%'   
+                bat 'docker run --rm -p 6069:5000 %DOCKER_REPOSITORY%:%DOCKER_TAG% '   
         }
     }
 }
