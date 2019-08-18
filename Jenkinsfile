@@ -20,7 +20,7 @@ pipeline
                     description: 'Docker Account Password')
 
             string( name: 'DOCKER_IMAGE',
-                    defaultValue: "WebAPI_image", 
+                    defaultValue: "webapi_image", 
                     description: 'Docker Image Name')
 
             string( name: 'DOCKER_REPOSITORY',
@@ -109,7 +109,6 @@ pipeline
                 bat 'docker pull %DOCKER_REPOSITORY%:%DOCKER_TAG%'   
                 bat 'docker run --rm -p 6069:5000 %DOCKER_REPOSITORY%:%DOCKER_TAG% '   
             }
-
         }
     }
 }
