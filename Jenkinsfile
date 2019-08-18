@@ -39,7 +39,8 @@ pipeline
             steps 
             {
                 echo '_________________________ RESTORE ________________________________'
-				bat 'dotnet restore %SOLUTION_FILE% --source https://api.nuget.org/v3/index.json'            }
+				bat 'dotnet restore %SOLUTION_FILE% --source https://api.nuget.org/v3/index.json'            
+            }
         }
         stage('Build') 
         {
@@ -93,6 +94,7 @@ pipeline
                 echo '_________________________ DOCKER IMAGE RUN ________________________________'
                 bat 'docker pull %DOCKER_REPOSITORY%:%DOCKER_TAG%'   
                 bat 'docker run --rm -p 6069:5000 %DOCKER_REPOSITORY%:%DOCKER_TAG% '   
+            }
         }
     }
 }
