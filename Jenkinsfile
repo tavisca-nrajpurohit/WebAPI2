@@ -58,22 +58,32 @@ pipeline
                 bat 'dotnet test %TEST_FILE%'
             }
         }
-        stage('Build Artifact')
+        stage('PUBLISH')
         {
             steps 
             {
                 echo '_________________________ PUBLISH ________________________________'
                 bat 'dotnet publish %SOLUTION_FILE% -c RELEASE -o Publish'
             }
+        }
+        stage('BUILD DOCKER IMAGE')
+        {
             steps 
             {
                 echo '_________________________ BUILD DOCKER IMAGE ________________________________'
-                bat 'docker build -t %DOCKER_IMAGE% -f Dockerfile .'               }
+                bat 'docker build -t %DOCKER_IMAGE% -f Dockerfile .'               
+            }
+        }
+        stage('DOCKER USER LOGIN')
+        {
             steps 
             {
                 echo '_________________________ DOCKER USER LOGIN ________________________________'
                 bat 'docker login -p %DOCKER_PASSWORD% -u %DOCKER_USERNAME%'
             }
+        }
+        stage('DOCKER PUSH IMAGE TO DOCKERHUB')
+        {
             steps 
             {
                 echo '__________________ DOCKER PUSH IMAGE TO DOCKERHUB ________________________'
@@ -81,7 +91,10 @@ pipeline
                 bat 'docker push %DOCKER_REPOSITORY%:%DOCKER_TAG%'
             }
         }
-        stage('Deploy')
+
+
+        }
+        stage('REMOVE OLD IMAGE')
         {
             steps 
             {
@@ -89,12 +102,16 @@ pipeline
                 bat 'docker rmi %DOCKER_IMAGE%:latest'
                 bat 'docker rmi %DOCKER_REPOSITORY%:%DOCKER_TAG%'
             }
+        }
+        stage('DOCKER IMAGE RUN')
+        {
             steps 
             {
                 echo '_________________________ DOCKER IMAGE RUN ________________________________'
                 bat 'docker pull %DOCKER_REPOSITORY%:%DOCKER_TAG%'   
                 bat 'docker run --rm -p 6069:5000 %DOCKER_REPOSITORY%:%DOCKER_TAG% '   
             }
+
         }
     }
 }
